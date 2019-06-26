@@ -1,27 +1,37 @@
-# Interpolation
+1) Creo el proyecto con:
+ ng new |ProyectoName|
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+2) Lo lanzo con ng serve --open
 
-## Development server
+PRUEBAS:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+ * * * PRUEBA 1: Interpolation: * * *
 
-## Code scaffolding
+1.1 ) Nos vamos a src/app/app.component.ts y en el export class ponemos la propiedad que queramos hacer interpolacion. En este caso un simple 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+message: string = "Esto es una interpolation :)"
 
-## Build
+1.2 )  Nos vamos a su component.html y allí encapsulamos entre doble llave {{message}}
+1.3 )  Angular hace un bind y nos muestra el mensaje.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+* * * PRUEBA 2: ngFor con array simple * * *
 
-## Running unit tests
+Para usar el ngFor:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2.1  Tenemos en app.component.ts un array con animals dentro de la class
+2.2  Para usarlo nos vamos al html del componente y, en este caso , hacemos una lista:
+<ul>
+<li *ngFor="let animal in animals">{{animal}}</li>
+</ul>
 
-## Running end-to-end tests
+dentro del <li> pondremos nuestro ngFor con el bucle y luego el {{}} para que cada animal se vaya poniendo ahí con interpolacion
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+* * * PRUEBA 3: ngFor con array mas complicado * * *
 
-## Further help
+3.1 tenemos un array persons mas complicado en la class de app.component.ts
+3.2 hemos usado en el html el ngFor para mostrar varias de sus propiedades dentro de una lista.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* * * PRUEBA 4: ngIf * * *
+
+4.1 si el array de animal tiene mas de 3 animales se muestra una frase en el html, si quitas un animal, al haber menos de 3 no se muestra
+
